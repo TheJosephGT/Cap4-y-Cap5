@@ -1,0 +1,50 @@
+@page "/promedio"
+
+<!--Hacer un programa que calcule el
+promedio de edad de un grupo de
+personas y diga cuál es la de edad más
+grande y cuál es la más joven.-->
+
+
+<div class="form-group">
+    <label for="Edad">Ingrese la edad: </label><br>
+    <input type="number" id="caja" class="form-control" @bind="edad"><br>
+    <button type="submit" class="btn btn-primary" @onclick="Agregar">Agregar</button>
+    <button type="submit" class="btn btn-primary" @onclick="Calcular">Calcular</button>
+</div>
+<div>
+    @if (mostrar == true)
+    {
+        <p>El promedio es igual a: @promedio</p>
+    }
+</div>
+
+
+
+
+
+@code{
+    int edad;
+    bool mostrar = false;
+    double promedio=0;
+
+    List<int> edades = new List<int>();
+
+    void Agregar()
+    {
+        edades.Add(edad);
+        
+
+    }
+
+    void Calcular()
+    {
+        mostrar = true;
+        for(int i=0; i < edades.Count; i++)
+        {
+            this.promedio = edades[i] + promedio;
+        }
+
+        this.promedio = promedio / edades.Count;
+    }
+}
