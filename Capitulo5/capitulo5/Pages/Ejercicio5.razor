@@ -1,0 +1,35 @@
+@page "/cadena"
+
+<!--Hacer una función que dado un número
+nos regrese una cadena donde se
+encuentre escrito en palabras.-->
+
+
+<div>
+    <label for="numero">Ingrese el numero</label><br>
+    <input type="number" @bind="num">
+
+    <button @onclick="Convertir">Convertir</button>
+
+    @if(condi == true)
+    {
+        <p>Resultado: @palabra</p>
+    }
+    
+
+
+</div>
+
+
+@code{
+    int num;
+
+    char palabra;
+    bool condi = false;
+
+    void Convertir()
+    {
+        palabra = ((char)num);
+        condi = true;
+    }
+}

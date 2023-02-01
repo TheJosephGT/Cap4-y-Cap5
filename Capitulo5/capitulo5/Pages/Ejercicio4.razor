@@ -1,0 +1,38 @@
+@page "/factorial"
+
+<!--Hacer una función que calcule el factorial
+de un número.-->
+
+<div>
+    <label for="numero">Ingrese el numero: </label><br>
+    <input type="number" @bind="num">
+
+    <button @onclick="Calcular">Calcular</button>
+
+    @if (@mostrar == true)
+    {
+        <p>El factorial es: @num</p>
+    }
+
+
+
+
+
+    
+
+</div>
+
+
+@code{
+    int num;
+    bool mostrar = false;
+
+    void Calcular(){
+        for (int i = num-1; i >= 1; i--)
+        {
+            num = num *i;
+        }
+
+        mostrar = true;
+    }
+}

@@ -1,0 +1,38 @@
+@page "/multiplicacion"
+
+<!--Hacer un programa que muestre la tabla
+de multiplicar del 1 al 10 de cualquier
+número.-->
+
+<div>
+    <label for="numero">Ingrese el numero: </label><br>
+    <input type="number" @bind="@numero"/>
+
+    <button @onclick="Tabla">Presione</button>
+
+    <div>
+
+        @if (table == true)
+        {
+            @for (int i = 1; i <= 10; i++)
+            {
+                <p>@(numero) x @i = @(i*numero)</p>
+            }
+        }
+
+    </div>
+
+</div>
+
+
+
+@code{
+
+    int numero;
+    bool table =false;
+
+    void Tabla(){
+        table = true;
+    }
+
+}

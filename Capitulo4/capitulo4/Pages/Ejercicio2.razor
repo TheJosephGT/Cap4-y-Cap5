@@ -1,0 +1,36 @@
+@page "/potencia"
+
+<!--2 Hacer un programa que calcule el
+resultado de un número elevado a
+cualquier potencia.-->
+
+<div>
+    <label for="numero">Ingrese el valor que sera calculado: </label>
+    <input type="number" @bind="numero"><br>
+
+    <label for="numero">Ingrese el valor de la potencia: </label>
+    <input type="number" @bind="potencia"><br>
+
+    <button @onclick="Operacion">Calcular</button>
+
+    @if(@muestra == true){
+        <p> El resultado es = @Math.Pow(numero,potencia)</p>
+    }
+
+
+</div>
+
+
+
+@code{
+    
+    int numero, potencia;
+    bool muestra = false;
+
+    void Operacion(){
+        muestra = true;
+
+    }
+    
+}
+
